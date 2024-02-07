@@ -174,8 +174,8 @@ public class BsonUtils {
 		return new Document(map);
 	}
 
-	public static void addToMap(Bson bson, String key, @Nullable Object value) {
-
+	public static void addToMap(Bson bson, String keyName, @Nullable Object value) {
+                String key = keyName.intern();
 		if (bson instanceof Document document) {
 
 			document.put(key, value);
